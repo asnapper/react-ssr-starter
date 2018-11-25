@@ -9,13 +9,12 @@
   "scripts": {
     "example": "cd example && yarn run dev",
     "build": "yarn run build:client && yarn run build:server",
-    "build:client": "rm -rf Client && babel src -d Client --copy-files --ignore Server.js,views/* && mv Client/Client.js Client/index.js",
-    "build:server": "rm -rf Server && babel src -d Server --copy-files --ignore Client.js && mv Server/Server.js Server/index.js",
+    "build:client": "rm -rf dist/Client && babel src -d dist/Client --copy-files --ignore Server.js,views/* && mv dist/Client/Client.js dist/Client/index.js",
+    "build:server": "rm -rf dist/Server && babel src -d dist/Server --copy-files --ignore Client.js && mv dist/Server/Server.js dist/Server/index.js",
     "clean": "rm -rf node_modules && rm -rf Server && rm -rf Client && rm -rf example/node_modules && rm -rf example/build"
   },
   "files": [
-    "Client",
-    "Server"
+    "dist"
   ],
   "author": "Emanuele Longo",
   "license": "ISC",
